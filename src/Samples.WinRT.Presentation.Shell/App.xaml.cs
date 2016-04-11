@@ -1,99 +1,108 @@
 ﻿using System;
-using Windows.ApplicationModel;
+using System.Collections.Generic;
+using System.Linq;
 using Windows.ApplicationModel.Activation;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
+using Caliburn.Micro;
+using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
 namespace Samples.WinRT.Client.Presentation.Shell
 {
-    /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
-    /// </summary>
-    sealed partial class App : Application
+    public sealed partial class App
     {
-        /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
-        /// </summary>
+        private WinRTContainer _container;
+
+        private readonly Dictionary<string, Type> _typedic = new Dictionary<string, Type>();
+
         public App()
         {
-            this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            InitializeComponent();
         }
 
-        /// <summary>
-        /// Invoked when the application is launched normally by the end user.  Other entry points
-        /// will be used such as when the application is launched to open a specific file.
-        /// </summary>
-        /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override void Configure()
         {
+            _container = new WinRTContainer();
+            _container.RegisterWinRTServices();
 
-#if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
+            _container.RegisterSingleton(typeof(ShellViewModel), null, typeof(ShellViewModel));
+            ViewLocator.LocateTypeForModelType = (modelType, displayLocation, context) =>
             {
-                this.DebugSettings.EnableFrameRateCounter = true;
-            }
-#endif
+                var viewTypeName = modelType.FullName.Substring(0, modelType.FullName.IndexOf("`") < 0
+                    ? modelType.FullName.Length
+                    : modelType.FullName.IndexOf("`")
+                    ).Replace("Model", string.Empty);
 
-            Frame rootFrame = Window.Current.Content as Frame;
-
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
-            if (rootFrame == null)
-            {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame();
-                // Set the default language
-                rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
-
-                rootFrame.NavigationFailed += OnNavigationFailed;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                if (context != null)
                 {
-                    //TODO: Load state from previously suspended application
+                    viewTypeName = viewTypeName.Remove(viewTypeName.Length - 4, 4);
+                    viewTypeName = viewTypeName + "." + context;
                 }
 
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
-            }
+                Type viewType;
+                if (!_typedic.TryGetValue(viewTypeName, out viewType))
+                {
+                    _typedic[viewTypeName] = viewType = (from assembly in SelectAssemblies()
+                                                         from type in assembly
+#if NET45
+                                                         .GetExportedTypes()
+#endif
+#if WINDOWS_UWP || NETFX_CORE || WIN81
+                                                         .DefinedTypes
+#endif
+                                                         where type.FullName == viewTypeName
+                                                         select type
+#if WINDOWS_UWP || NETFX_CORE || WIN81
+                                                         .AsType()
+#endif
+                                                         ).FirstOrDefault();
+                }
 
-            if (rootFrame.Content == null)
+                return viewType;
+            };
+            ViewLocator.LocateForModelType = (modelType, displayLocation, context) =>
             {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
-            }
-            // Ensure the current window is active
-            Window.Current.Activate();
+                var viewType = ViewLocator.LocateTypeForModelType(modelType, displayLocation, context);
+
+                return viewType == null
+                    ? new TextBlock
+                    {
+                        Text = $"Cannot find view for\nModel: {modelType}\nContext: {context} ."
+                    }
+                    : ViewLocator.GetOrCreateViewType(viewType);
+            };
         }
 
-        /// <summary>
-        /// Invoked when Navigation to a certain page fails
-        /// </summary>
-        /// <param name="sender">The Frame which failed navigation</param>
-        /// <param name="e">Details about the navigation failure</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        protected override object GetInstance(Type service, string key)
         {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+            var instance = _container.GetInstance(service, key);
+            if (instance != null)
+                return instance;
+            throw new Exception("Could not locate any instances.");
         }
 
-        /// <summary>
-        /// Invoked when application execution is being suspended.  Application state is saved
-        /// without knowing whether the application will be terminated or resumed with the contents
-        /// of memory still intact.
-        /// </summary>
-        /// <param name="sender">The source of the suspend request.</param>
-        /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        protected override IEnumerable<object> GetAllInstances(Type service)
         {
-            var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
-            deferral.Complete();
+            return _container.GetAllInstances(service);
+        }
+
+        protected override void BuildUp(object instance)
+        {
+            _container.BuildUp(instance);
+        }
+
+        protected override void PrepareViewFirst(Frame rootFrame)
+        {
+            _container.RegisterNavigationService(rootFrame);
+        }
+
+        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        {
+            if (args.PreviousExecutionState == ApplicationExecutionState.Running)
+                return;
+
+            DisplayRootViewFor<ShellViewModel>();
         }
     }
 }
