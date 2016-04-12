@@ -1,7 +1,7 @@
-﻿<caliburn:CaliburnApplication
+﻿<shell:AppBootstrapper
     x:Class="Samples.WinRT.Client.Presentation.Shell.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:caliburn="using:Caliburn.Micro">
+    xmlns:shell="using:Samples.WinRT.Client.Presentation.Shell">
 
-</caliburn:CaliburnApplication>
+</shell:AppBootstrapper>
