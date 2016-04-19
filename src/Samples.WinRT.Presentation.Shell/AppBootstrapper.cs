@@ -6,7 +6,7 @@ using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 
 namespace Samples.WinRT.Client.Presentation.Shell
 {
-    public class AppBootstrapper : BootstrapperContainerBase<ShellViewModel, WinRTContainerAdapter, WinRTContainer>
+    public class AppBootstrapper : BootstrapperContainerBase<WinRTContainerAdapter, WinRTContainer>.WithRootObject<ShellViewModel>
     {
         private static readonly WinRTContainer _iocContainer = new WinRTContainer();       
 
