@@ -1,4 +1,4 @@
-﻿namespace Samples.WinRT.Client.Presentation.Shell
+﻿namespace Samples.WinRT.Client.Launcher
 {
     public sealed partial class App
     {        

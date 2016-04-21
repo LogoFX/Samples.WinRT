@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:behaviors="using:Samples.WinRT.Client.Presentation.Shell.Interactivity.Behaviors"
-        xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
         xmlns:viewModels="using:Samples.WinRT.Client.Presentation.Shell.ViewModels"
         mc:Ignorable="d"       
         d:DataContext="{d:DesignInstance viewModels:LoginViewModel}"
