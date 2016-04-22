@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if FAKE
+using System;
 using JetBrains.Annotations;
 using Samples.Client.Data.Contracts.Dto;
 using Samples.Client.Data.Contracts.Providers;
@@ -8,7 +9,7 @@ using Solid.Practices.IoC;
 using Solid.Practices.Modularity;
 
 namespace Samples.Client.Data.Fake.Providers
-{    
+{
     [UsedImplicitly]
     class Module : ICompositionModule<IIocContainer>
     {
@@ -65,3 +66,4 @@ namespace Samples.Client.Data.Fake.Providers
         }
     }
 }
+#endif
