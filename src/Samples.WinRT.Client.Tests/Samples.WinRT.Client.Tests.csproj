@@ -153,7 +153,7 @@
       <Name>Samples.WinRT.Client.Tests.Integration.Infra</Name>
     </ProjectReference>
     <ProjectReference Include="..\Samples.WinRT.Client.Tests.Steps\Samples.WinRT.Client.Tests.Steps.csproj">
-      <Project>{DFBA7596-56A5-4C6E-9523-9255A40424D6}</Project>
+      <Project>{718C92E0-CAFE-43AF-97EC-869BC8E9482F}</Project>
       <Name>Samples.WinRT.Client.Tests.Steps</Name>
     </ProjectReference>
   </ItemGroup>
