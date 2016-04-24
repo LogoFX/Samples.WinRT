@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using Caliburn.Micro;
 using JetBrains.Annotations;
 using LogoFX.Core;
@@ -9,7 +8,7 @@ using Samples.Client.Model.Shared;
 namespace Samples.WinRT.Client.Presentation.Shell.ViewModels
 {
     [UsedImplicitly]
-    public class ShellViewModel : Conductor<INotifyPropertyChanged>.Collection.OneActive     
+    public class ShellViewModel : Conductor<object>.Collection.OneActive     
     {
         private readonly ILoginService _loginService;
         private readonly IDataService _dataService;
