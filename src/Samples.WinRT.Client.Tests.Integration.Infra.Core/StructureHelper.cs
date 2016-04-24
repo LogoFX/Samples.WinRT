@@ -2,7 +2,7 @@ using System.Linq;
 using LogoFX.Client.Modularity;
 using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 
-namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
+namespace Samples.WinRT.Client.Tests.Integration.Infra.Core
 {
     /// <summary>
     /// Represents structure helper which provides easier API for accessing different parts of application
@@ -48,6 +48,11 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
         public static ShellViewModel GetShell()
         {
             return GetShellInternal();
+        }
+
+        public static LoginViewModel GetLogin()
+        {
+            return GetShellInternal().LoginViewModel;
         }
 
         private static ShellViewModel GetShellInternal()

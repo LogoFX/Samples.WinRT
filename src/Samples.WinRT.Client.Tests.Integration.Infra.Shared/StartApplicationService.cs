@@ -1,6 +1,7 @@
 using Caliburn.Micro;
 using LogoFX.Client.Testing.Integration;
 using Samples.WinRT.Client.Presentation.Shell.ViewModels;
+using Samples.WinRT.Client.Tests.Integration.Infra.Core;
 
 namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
 {
@@ -17,7 +18,8 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
         {
             var shell = (ShellViewModel)rootObject;
             StructureHelper.SetRootObject(shell);
-            ScreenExtensions.TryActivate(shell);            
+            ScreenExtensions.TryActivate(shell);
+            ScreenExtensions.TryActivate(StructureHelper.GetLogin());
         }
     }
 }
