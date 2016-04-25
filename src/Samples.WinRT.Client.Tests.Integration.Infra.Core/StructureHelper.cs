@@ -55,6 +55,11 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra.Core
             return GetShellInternal().LoginViewModel;
         }
 
+        public static MainViewModel GetMain()
+        {
+            return GetShellInternal().MainViewModel;
+        }
+
         private static ShellViewModel GetShellInternal()
         {
             return _rootObject;

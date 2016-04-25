@@ -53,7 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneralStepsAdapter.cs" />
+    <Compile Include="GivenLoginStepsAdapter.cs" />
     <Compile Include="LoginStepsAdapter.cs" />
+    <Compile Include="MainStepsAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

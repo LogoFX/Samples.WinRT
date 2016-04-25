@@ -1,5 +1,8 @@
+using Attest.Fake.Registration;
+using Attest.Testing.Core;
 using Caliburn.Micro;
 using LogoFX.Client.Testing.Integration;
+using Samples.Client.Data.Fake.ProviderBuilders;
 using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 using Samples.WinRT.Client.Tests.Integration.Infra.Core;
 
@@ -10,8 +13,8 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
         // ReSharper disable once RedundantOverridenMember
         protected override void RegisterFakes()
         {
-            base.RegisterFakes(); 
-            //TODO: add builders registration           
+            base.RegisterFakes();            
+            RegistrationHelper.RegisterBuilder(ScenarioHelper.Container, ScenarioHelper.GetOrCreate(WarehouseProviderBuilder.CreateBuilder));
         }
 
         protected override void OnStart(object rootObject)

@@ -10,5 +10,17 @@ namespace Samples.WinRT.Client.Integration.ScreenObjects
             var loginViewModel = StructureHelper.GetLogin();
             return loginViewModel.IsActive;
         }
+
+        public void SetUsername(string username)
+        {
+            var loginViewModel = StructureHelper.GetLogin();
+            loginViewModel.UserName = username;
+        }
+
+        public void Login()
+        {
+            var loginViewModel = StructureHelper.GetLogin();
+            loginViewModel.LoginCommand.Execute(null);
+        }
     }
 }

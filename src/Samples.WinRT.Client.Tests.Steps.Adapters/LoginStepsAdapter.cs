@@ -21,12 +21,6 @@ namespace Samples.WinRT.Client.Tests.Steps.Adapters
         public void ThenTheLoginScreenIsDisplayed()
         {
             LoginSteps.ThenTheLoginScreenIsDisplayed();
-        }
-
-        [Then(@"Application navigates to the main screen")]
-        public void ThenApplicationNavigatesToTheMainScreen()
-        {
-            //for readability reasons
-        }
+        }        
     }
 }

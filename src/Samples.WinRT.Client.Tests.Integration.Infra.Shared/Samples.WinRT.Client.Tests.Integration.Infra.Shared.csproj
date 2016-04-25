@@ -260,6 +260,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Samples.Client.Data.Contracts.Providers\Samples.Client.Data.Contracts.Providers.csproj">
+      <Project>{d2432bc9-c269-47ca-85ac-7b1f79bdd2b7}</Project>
+      <Name>Samples.Client.Data.Contracts.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Samples.Client.Data.Fake.ProviderBuilders\Samples.Client.Data.Fake.ProviderBuilders.csproj">
+      <Project>{B9B61E48-888E-4347-8DFE-F41DAC4A1F2F}</Project>
+      <Name>Samples.Client.Data.Fake.ProviderBuilders</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Samples.Client.Model.Contracts\Samples.Client.Model.Contracts.csproj">
       <Project>{536D34E4-A409-4567-B7C6-58F50206740E}</Project>
       <Name>Samples.Client.Model.Contracts</Name>
@@ -284,6 +292,14 @@
       <Project>{7B1EA1D1-A935-4C04-901D-37588FA09888}</Project>
       <Name>Samples.WinRT.Client.Tests.Integration.Infra.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts.csproj">
+      <Project>{49140022-B1F2-431E-84EF-9309BA1CC550}</Project>
+      <Name>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Fake\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Fake.csproj">
+      <Project>{FA4DDE03-45B5-4795-ADDB-E2CBA7D4E3E8}</Project>
+      <Name>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Fake</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
@@ -291,7 +307,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestsWithFake|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\TestsWithFake\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_APP;FAKE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>

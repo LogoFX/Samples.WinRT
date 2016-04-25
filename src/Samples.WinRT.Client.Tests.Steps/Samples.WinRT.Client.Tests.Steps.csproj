@@ -36,7 +36,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestsWithFake|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\TestsWithFake\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;FAKE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -48,16 +48,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneralSteps.cs" />
+    <Compile Include="GivenLoginSteps.cs" />
     <Compile Include="LoginSteps.cs" />
+    <Compile Include="MainSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Samples.Client.Data.Contracts.Providers\Samples.Client.Data.Contracts.Providers.csproj">
+      <Project>{D2432BC9-C269-47CA-85AC-7B1F79BDD2B7}</Project>
+      <Name>Samples.Client.Data.Contracts.Providers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Samples.WinRT.Client.ScreenObjects.Contracts\Samples.WinRT.Client.ScreenObjects.Contracts.csproj">
       <Project>{319D9A32-4C4A-41CF-BA5D-B329E07420F8}</Project>
       <Name>Samples.WinRT.Client.ScreenObjects.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts.csproj">
+      <Project>{49140022-B1F2-431E-84EF-9309BA1CC550}</Project>
+      <Name>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Attest.Fake.Builders">
+      <HintPath>..\packages\Attest.Fake.Builders.1.1.1\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Attest.Fake.Builders.dll</HintPath>
+    </Reference>
+    <Reference Include="Attest.Fake.Core">
+      <HintPath>..\packages\Attest.Fake.Core.1.0.8\lib\portable-net45+wpa8+win8\Attest.Fake.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Attest.Testing.Core, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Attest.Tests.Core.1.2.1\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Attest.Testing.Core.dll</HintPath>
       <Private>True</Private>

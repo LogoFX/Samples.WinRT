@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1A8B996A-A97F-4F2B-9BFB-EED800D8C3C7}</ProjectGuid>
+    <ProjectGuid>{FA4DDE03-45B5-4795-ADDB-E2CBA7D4E3E8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Samples.WinRT.Client.Integration.ScreenObjects</RootNamespace>
-    <AssemblyName>Samples.WinRT.Client.Integration.ScreenObjects</AssemblyName>
+    <RootNamespace>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Fake</RootNamespace>
+    <AssemblyName>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Fake</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
@@ -102,47 +102,50 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\Samples.WinRT.Client.Presentation.Shell\Samples.WinRT.Client.Presentation.Shell.csproj">
-      <Project>{D73E6669-F40F-41CB-B4F9-CEC09DEE7619}</Project>
-      <Name>Samples.WinRT.Client.Presentation.Shell</Name>
+    <ProjectReference Include="..\Samples.Client.Data.Contracts.Providers\Samples.Client.Data.Contracts.Providers.csproj">
+      <Project>{D2432BC9-C269-47CA-85AC-7B1F79BDD2B7}</Project>
+      <Name>Samples.Client.Data.Contracts.Providers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.ScreenObjects.Contracts\Samples.WinRT.Client.ScreenObjects.Contracts.csproj">
-      <Project>{319D9A32-4C4A-41CF-BA5D-B329E07420F8}</Project>
-      <Name>Samples.WinRT.Client.ScreenObjects.Contracts</Name>
+    <ProjectReference Include="..\Samples.Client.Data.Fake.ProviderBuilders\Samples.Client.Data.Fake.ProviderBuilders.csproj">
+      <Project>{B9B61E48-888E-4347-8DFE-F41DAC4A1F2F}</Project>
+      <Name>Samples.Client.Data.Fake.ProviderBuilders</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Core\Samples.WinRT.Client.Tests.Integration.Infra.Core.csproj">
-      <Project>{7B1EA1D1-A935-4C04-901D-37588FA09888}</Project>
-      <Name>Samples.WinRT.Client.Tests.Integration.Infra.Core</Name>
+    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts.csproj">
+      <Project>{49140022-B1F2-431E-84EF-9309BA1CC550}</Project>
+      <Name>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginScreenObject.cs" />
-    <Compile Include="MainScreenObject.cs" />
+    <Compile Include="LoginProviderBuilderFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.Core.3.0.0\lib\portable-net45+win8+wp8+wpa81+MonoAndroid10+Xamarin.iOS10+MonoTouch10+uap10.0\Caliburn.Micro.dll</HintPath>
+    <Reference Include="Attest.Fake.Builders, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Attest.Fake.Builders.1.1.1\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Attest.Fake.Builders.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LogoFX.Client.Core, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LogoFX.Client.Core.Core.1.0.7\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch\LogoFX.Client.Core.dll</HintPath>
+    <Reference Include="Attest.Fake.Core, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Attest.Fake.Core.1.0.8\lib\portable-net45+wpa8+win8\Attest.Fake.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LogoFX.Client.Mvvm.ViewModel, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LogoFX.Client.Mvvm.ViewModel.Core.1.0.5\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\LogoFX.Client.Mvvm.ViewModel.dll</HintPath>
+    <Reference Include="Attest.Fake.Registration, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Attest.Fake.Registration.1.0.9\lib\portable-net45+wpa8+win8\Attest.Fake.Registration.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LogoFX.Client.Mvvm.ViewModel.Contracts, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LogoFX.Client.Mvvm.ViewModel.Core.1.0.5\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\LogoFX.Client.Mvvm.ViewModel.Contracts.dll</HintPath>
+    <Reference Include="Attest.Testing.Core, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Attest.Tests.Core.1.2.1\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Attest.Testing.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LogoFX.Client.Mvvm.ViewModel.Extensions, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LogoFX.Client.Mvvm.ViewModel.Extensions.Core.1.0.6\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\LogoFX.Client.Mvvm.ViewModel.Extensions.dll</HintPath>
+    <Reference Include="Shim, Version=1.0.2.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">
+      <HintPath>..\packages\shim.1.0.2.50909\lib\netcore451\Shim.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LogoFX.Core, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LogoFX.Core.1.0.7\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch\LogoFX.Core.dll</HintPath>
+    <Reference Include="Solid.Bootstrapping, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Solid.Bootstrapping.1.1.0\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Solid.Bootstrapping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Solid.Practices.IoC, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Solid.Practices.IoC.1.1.1\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Solid.Practices.IoC.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -151,56 +154,6 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestsWithFake|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\TestsWithFake\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
-    <NoStdLib>true</NoStdLib>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestsWithFake|ARM'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\ARM\TestsWithFake\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <NoStdLib>true</NoStdLib>
-    <DebugType>full</DebugType>
-    <PlatformTarget>ARM</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestsWithFake|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\TestsWithFake\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <NoStdLib>true</NoStdLib>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestsWithFake|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\TestsWithFake\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <NoStdLib>true</NoStdLib>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
