@@ -1,16 +1,14 @@
-using System.Windows.Threading;
 using Attest.Testing.Core;
 using Caliburn.Micro;
-using LogoFX.Client.Bootstrapping.Adapters.WinRTContainer;
+using LogoFX.Client.Bootstrapping.Adapters.SimpleContainer;
 using LogoFX.Client.Testing.Contracts;
 using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 using Samples.WinRT.Client.Tests.Integration.Infra.Shared;
-using Solid.Practices.Scheduling;
 
 namespace Samples.WinRT.Client.Tests.Integration.Infra
 {
     public abstract class IntegrationTestsBaseWithActivation :
-        IntegrationTestsBase<WinRTContainerAdapter, ShellViewModel, TestBootstrapper>
+        IntegrationTestsBase<ExtendedSimpleContainerAdapter, ShellViewModel, TestBootstrapper>
     {               
         protected override ShellViewModel CreateRootObjectOverride(ShellViewModel rootObject)
         {

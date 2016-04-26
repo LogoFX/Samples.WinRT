@@ -1,14 +1,14 @@
 ﻿using LogoFX.Client.Bootstrapping;
-using LogoFX.Client.Bootstrapping.Adapters.WinRTContainer;
+using LogoFX.Client.Bootstrapping.Adapters.SimpleContainer;
 using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 
 namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
 {
-    public class TestBootstrapper : BootstrapperContainerBase<WinRTContainerAdapter>
+    public class TestBootstrapper : BootstrapperContainerBase<ExtendedSimpleContainerAdapter>
         .WithRootObject<ShellViewModel>
     {
         public TestBootstrapper() :
-            base(new WinRTContainerAdapter(), new BootstrapperCreationOptions
+            base(new ExtendedSimpleContainerAdapter(), new BootstrapperCreationOptions
             {
                 UseApplication = false,
                 ReuseCompositionInformation = true

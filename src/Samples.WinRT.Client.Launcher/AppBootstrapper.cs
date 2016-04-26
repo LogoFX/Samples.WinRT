@@ -2,35 +2,35 @@
 using Caliburn.Micro;
 using LogoFX.Bootstrapping;
 using LogoFX.Client.Bootstrapping;
-using LogoFX.Client.Bootstrapping.Adapters.WinRTContainer;
+using LogoFX.Client.Bootstrapping.Adapters.SimpleContainer;
 using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 using Solid.Practices.IoC;
 using Solid.Practices.Middleware;
 
 namespace Samples.WinRT.Client.Launcher
 {
-    public class AppBootstrapper : BootstrapperContainerBase<WinRTContainerAdapter, WinRTContainer>.WithRootObject<ShellViewModel>
+    public class AppBootstrapper : BootstrapperContainerBase<ExtendedSimpleContainerAdapter>.WithRootObject<ShellViewModel>
     {
-        private static readonly WinRTContainer _iocContainer = new WinRTContainer();       
+        private static readonly ExtendedSimpleContainerAdapter _iocContainer = new ExtendedSimpleContainerAdapter();       
 
-        public AppBootstrapper() : base(_iocContainer, c => new WinRTContainerAdapter(c))
+        public AppBootstrapper() : base(_iocContainer)
         {            
         }
 
         protected override void PrepareViewFirst(Frame rootFrame)
         {
-            Use(new RegisterNavigationServiceMiddleware<WinRTContainerAdapter>(rootFrame));
-            //RegisterNavigationService(rootFrame);            
+            //Use(new RegisterNavigationServiceMiddleware<ExtendedSimpleContainerAdapter>(rootFrame));
+            RegisterNavigationService(rootFrame);            
         }
-
-        // ReSharper disable once UnusedMember.Local -- Still under debugging
+        
         private void RegisterNavigationService(Frame rootFrame, bool treatViewAsLoaded = false, bool cacheViewModels = false)
         {
             INavigationService navigationService = cacheViewModels ? new CachingFrameAdapter(rootFrame, treatViewAsLoaded) : new FrameAdapter(rootFrame, treatViewAsLoaded);
-            _iocContainer.RegisterInstance(typeof(INavigationService), null, navigationService);
+            _iocContainer.RegisterInstance(navigationService);
         }
     }
 
+    // ReSharper disable once UnusedMember.Local -- This middleware uses Frame object which is still not available during Configure phase...
     class RegisterNavigationServiceMiddleware<TIocContainerAdapter> : 
         IMiddleware<IBootstrapperWithContainerAdapter<TIocContainerAdapter>>
         where TIocContainerAdapter : IIocContainer
