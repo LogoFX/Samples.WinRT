@@ -169,11 +169,13 @@
       <HintPath>..\packages\LogoFX.Client.Tests.Contracts.1.0.5\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\LogoFX.Client.Testing.Contracts.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LogoFX.Client.Testing.Infra.Platform">
-      <HintPath>..\..\..\logofx-project\cl-ts-sh\src\Bin\win81\Release\LogoFX.Client.Testing.Infra.Platform.dll</HintPath>
+    <Reference Include="LogoFX.Client.Testing.Infra.Platform, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LogoFX.Client.Tests.Shared.1.0.6\lib\win81\LogoFX.Client.Testing.Infra.Platform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="LogoFX.Client.Testing.Shared.Platform">
-      <HintPath>..\..\..\logofx-project\cl-ts-sh\src\Bin\win81\Release\LogoFX.Client.Testing.Shared.Platform.dll</HintPath>
+    <Reference Include="LogoFX.Client.Testing.Shared.Platform, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LogoFX.Client.Tests.Shared.1.0.6\lib\win81\LogoFX.Client.Testing.Shared.Platform.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.UnitTestFramework">
       <HintPath>..\..\..\..\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSTestFramework\14.0\References\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.UnitTestFramework.dll</HintPath>

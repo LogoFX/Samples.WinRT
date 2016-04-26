@@ -114,8 +114,8 @@
       <HintPath>..\packages\Attest.Fake.Core.1.0.8\lib\portable-net45+wpa8+win8\Attest.Fake.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Attest.Fake.LightMock, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Attest.Fake.LightMock.1.1.1\lib\win81\Attest.Fake.LightMock.dll</HintPath>
+    <Reference Include="Attest.Fake.LightMock, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Attest.Fake.LightMock.1.1.2\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Attest.Fake.LightMock.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Attest.Fake.Setup, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -127,7 +127,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="LightMock, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LightMock.1.0.0.6\lib\portable-net40+sl50+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\LightMock.dll</HintPath>
+      <HintPath>..\packages\Attest.Fake.LightMock.1.1.2\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\LightMock.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Shim, Version=1.0.2.0, Culture=neutral, PublicKeyToken=c55ec16d10c4b366, processorArchitecture=MSIL">

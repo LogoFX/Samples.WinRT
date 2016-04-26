@@ -19,8 +19,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         }
 
         protected override void SetupOverride()
-        {
-            //TODO: release version of Testing.Shared with support for 8.1 
+        {            
             LogoFX.Client.Testing.Shared.TestHelper.Setup();           
             ServiceRegistrationHelper.RegisterIntegrationObjects();
             ScenarioHelper.Add(new BuilderRegistrationService(), typeof(IBuilderRegistrationService));
