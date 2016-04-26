@@ -58,13 +58,13 @@
       <Project>{D2432BC9-C269-47CA-85AC-7B1F79BDD2B7}</Project>
       <Name>Samples.Client.Data.Contracts.Providers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Samples.Client.Data.Fake.ProviderBuilders\Samples.Client.Data.Fake.ProviderBuilders.csproj">
+      <Project>{B9B61E48-888E-4347-8DFE-F41DAC4A1F2F}</Project>
+      <Name>Samples.Client.Data.Fake.ProviderBuilders</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Samples.WinRT.Client.ScreenObjects.Contracts\Samples.WinRT.Client.ScreenObjects.Contracts.csproj">
       <Project>{319D9A32-4C4A-41CF-BA5D-B329E07420F8}</Project>
       <Name>Samples.WinRT.Client.ScreenObjects.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts.csproj">
-      <Project>{49140022-B1F2-431E-84EF-9309BA1CC550}</Project>
-      <Name>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

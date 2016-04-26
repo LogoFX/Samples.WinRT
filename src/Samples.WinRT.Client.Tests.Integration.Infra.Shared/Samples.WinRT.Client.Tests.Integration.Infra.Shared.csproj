@@ -300,14 +300,6 @@
       <Project>{7B1EA1D1-A935-4C04-901D-37588FA09888}</Project>
       <Name>Samples.WinRT.Client.Tests.Integration.Infra.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts.csproj">
-      <Project>{49140022-B1F2-431E-84EF-9309BA1CC550}</Project>
-      <Name>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Fake\Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Fake.csproj">
-      <Project>{FA4DDE03-45B5-4795-ADDB-E2CBA7D4E3E8}</Project>
-      <Name>Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Fake</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

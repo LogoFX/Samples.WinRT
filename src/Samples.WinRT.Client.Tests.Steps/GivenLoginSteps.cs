@@ -1,7 +1,7 @@
 ﻿#if FAKE
 using Attest.Testing.Core;
 using LogoFX.Client.Testing.Contracts;
-using Samples.WinRT.Client.Tests.Integration.Infra.Steps.Given.Contracts;
+using Samples.Client.Data.Fake.ProviderBuilders;
 
 #endif
 
@@ -15,7 +15,8 @@ namespace Samples.WinRT.Client.Tests.Steps
         public static void SetupAuthenticatedUserWithUsername(string username)
         {
 #if FAKE
-            var loginProviderBuilder = ScenarioHelper.Get<ILoginProviderBuilderFactory>().SetupWithUserName(username);
+            var loginProviderBuilder = ScenarioHelper.GetOrCreate(LoginProviderBuilder.CreateBuilder);
+            loginProviderBuilder.WithUser(username, string.Empty);
             ScenarioHelper.Get<IBuilderRegistrationService>().RegisterBuilder(loginProviderBuilder);
 #endif
 
@@ -27,8 +28,8 @@ namespace Samples.WinRT.Client.Tests.Steps
         public static void SetupLoginSuccessfullyWithUsername(string username)
         {
 #if FAKE
-            var loginProviderBuilder =
-                ScenarioHelper.Get<ILoginProviderBuilderFactory>().SetupWithSuccessfulLogin(username);
+            var loginProviderBuilder = ScenarioHelper.GetOrCreate(LoginProviderBuilder.CreateBuilder);
+            loginProviderBuilder.WithSuccessfulLogin(username);
             ScenarioHelper.Get<IBuilderRegistrationService>().RegisterBuilder(loginProviderBuilder);
 #endif
 
