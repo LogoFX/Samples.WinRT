@@ -1,4 +1,4 @@
-﻿namespace Samples.WinRT.Client.ScreenObjects.Contracts
+﻿namespace Samples.WinRT.Client.Tests.Contracts.ScreenObjects
 {
     public interface IMainScreenObject
     {

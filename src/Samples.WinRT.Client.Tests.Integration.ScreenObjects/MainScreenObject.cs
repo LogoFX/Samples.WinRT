@@ -1,4 +1,4 @@
-﻿using Samples.WinRT.Client.ScreenObjects.Contracts;
+﻿using Samples.WinRT.Client.Tests.Contracts.ScreenObjects;
 using Samples.WinRT.Client.Tests.Integration.Infra.Core;
 
 namespace Samples.WinRT.Client.Tests.Integration.ScreenObjects

@@ -288,9 +288,9 @@
       <Project>{D73E6669-F40F-41CB-B4F9-CEC09DEE7619}</Project>
       <Name>Samples.WinRT.Client.Presentation.Shell</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.ScreenObjects.Contracts\Samples.WinRT.Client.ScreenObjects.Contracts.csproj">
+    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Contracts.ScreenObjects\Samples.WinRT.Client.Tests.Contracts.ScreenObjects.csproj">
       <Project>{319D9A32-4C4A-41CF-BA5D-B329E07420F8}</Project>
-      <Name>Samples.WinRT.Client.ScreenObjects.Contracts</Name>
+      <Name>Samples.WinRT.Client.Tests.Contracts.ScreenObjects</Name>
     </ProjectReference>
     <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Core\Samples.WinRT.Client.Tests.Integration.Infra.Core.csproj">
       <Project>{7B1EA1D1-A935-4C04-901D-37588FA09888}</Project>

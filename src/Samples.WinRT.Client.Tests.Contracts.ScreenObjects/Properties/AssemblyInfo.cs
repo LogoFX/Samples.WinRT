@@ -4,11 +4,11 @@ using System.Reflection;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Samples.WinRT.Client.ScreenObjects.Contracts")]
+[assembly: AssemblyTitle("Samples.WinRT.Client.Tests.Contracts.ScreenObjects")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Samples.WinRT.Client.ScreenObjects.Contracts")]
+[assembly: AssemblyProduct("Samples.WinRT.Client.Tests.Contracts.ScreenObjects")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

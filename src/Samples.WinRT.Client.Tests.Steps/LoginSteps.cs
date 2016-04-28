@@ -1,5 +1,5 @@
 ﻿using Attest.Testing.Core;
-using Samples.WinRT.Client.ScreenObjects.Contracts;
+using Samples.WinRT.Client.Tests.Contracts.ScreenObjects;
 using Shouldly;
 
 namespace Samples.WinRT.Client.Tests.Steps
