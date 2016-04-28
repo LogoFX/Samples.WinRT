@@ -284,10 +284,6 @@
       <Project>{49724A56-9FA9-44C4-B731-1E414EE598BC}</Project>
       <Name>Samples.Client.Model.Shared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.Integration.ScreenObjects\Samples.WinRT.Client.Integration.ScreenObjects.csproj">
-      <Project>{1A8B996A-A97F-4F2B-9BFB-EED800D8C3C7}</Project>
-      <Name>Samples.WinRT.Client.Integration.ScreenObjects</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Samples.WinRT.Client.Presentation.Shell\Samples.WinRT.Client.Presentation.Shell.csproj">
       <Project>{D73E6669-F40F-41CB-B4F9-CEC09DEE7619}</Project>
       <Name>Samples.WinRT.Client.Presentation.Shell</Name>
@@ -299,6 +295,10 @@
     <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra.Core\Samples.WinRT.Client.Tests.Integration.Infra.Core.csproj">
       <Project>{7B1EA1D1-A935-4C04-901D-37588FA09888}</Project>
       <Name>Samples.WinRT.Client.Tests.Integration.Infra.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.ScreenObjects\Samples.WinRT.Client.Tests.Integration.ScreenObjects.csproj">
+      <Project>{1A8B996A-A97F-4F2B-9BFB-EED800D8C3C7}</Project>
+      <Name>Samples.WinRT.Client.Tests.Integration.ScreenObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

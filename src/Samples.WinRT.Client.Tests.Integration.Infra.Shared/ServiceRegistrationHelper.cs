@@ -1,7 +1,7 @@
 ﻿using Attest.Testing.Core;
 using LogoFX.Client.Testing.Contracts;
-using Samples.WinRT.Client.Integration.ScreenObjects;
 using Samples.WinRT.Client.ScreenObjects.Contracts;
+using Samples.WinRT.Client.Tests.Integration.ScreenObjects;
 
 namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
 {

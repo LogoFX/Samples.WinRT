@@ -9,8 +9,8 @@
     <ProjectGuid>{1A8B996A-A97F-4F2B-9BFB-EED800D8C3C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Samples.WinRT.Client.Integration.ScreenObjects</RootNamespace>
-    <AssemblyName>Samples.WinRT.Client.Integration.ScreenObjects</AssemblyName>
+    <RootNamespace>Samples.WinRT.Client.Tests.Integration.ScreenObjects</RootNamespace>
+    <AssemblyName>Samples.WinRT.Client.Tests.Integration.ScreenObjects</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>

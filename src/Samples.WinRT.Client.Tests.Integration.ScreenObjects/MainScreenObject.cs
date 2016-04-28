@@ -1,7 +1,7 @@
 ﻿using Samples.WinRT.Client.ScreenObjects.Contracts;
 using Samples.WinRT.Client.Tests.Integration.Infra.Core;
 
-namespace Samples.WinRT.Client.Integration.ScreenObjects
+namespace Samples.WinRT.Client.Tests.Integration.ScreenObjects
 {
     public class MainScreenObject : IMainScreenObject
     {

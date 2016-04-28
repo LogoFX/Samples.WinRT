@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Samples.WinRT.Client.Integration.ScreenObjects")]
+[assembly: AssemblyTitle("Samples.WinRT.Client.Tests.Integration.ScreenObjects")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Samples.WinRT.Client.Integration.ScreenObjects")]
+[assembly: AssemblyProduct("Samples.WinRT.Client.Tests.Integration.ScreenObjects")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
