@@ -206,7 +206,6 @@ Global
 		{AD12275A-AEB6-4DE1-8B9F-49AE7A161873}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD12275A-AEB6-4DE1-8B9F-49AE7A161873}.Release|x86.Build.0 = Release|Any CPU
 		{AD12275A-AEB6-4DE1-8B9F-49AE7A161873}.TestsWithFake|Any CPU.ActiveCfg = TestsWithFake|Any CPU
-		{AD12275A-AEB6-4DE1-8B9F-49AE7A161873}.TestsWithFake|Any CPU.Build.0 = TestsWithFake|Any CPU
 		{AD12275A-AEB6-4DE1-8B9F-49AE7A161873}.TestsWithFake|ARM.ActiveCfg = TestsWithFake|Any CPU
 		{AD12275A-AEB6-4DE1-8B9F-49AE7A161873}.TestsWithFake|ARM.Build.0 = TestsWithFake|Any CPU
 		{AD12275A-AEB6-4DE1-8B9F-49AE7A161873}.TestsWithFake|x64.ActiveCfg = TestsWithFake|Any CPU
@@ -286,7 +285,6 @@ Global
 		{7B20CB05-4318-4288-AD78-D393B5355453}.Release|x86.ActiveCfg = Release|x86
 		{7B20CB05-4318-4288-AD78-D393B5355453}.Release|x86.Build.0 = Release|x86
 		{7B20CB05-4318-4288-AD78-D393B5355453}.TestsWithFake|Any CPU.ActiveCfg = TestsWithFake|Any CPU
-		{7B20CB05-4318-4288-AD78-D393B5355453}.TestsWithFake|Any CPU.Build.0 = TestsWithFake|Any CPU
 		{7B20CB05-4318-4288-AD78-D393B5355453}.TestsWithFake|ARM.ActiveCfg = TestsWithFake|ARM
 		{7B20CB05-4318-4288-AD78-D393B5355453}.TestsWithFake|ARM.Build.0 = TestsWithFake|ARM
 		{7B20CB05-4318-4288-AD78-D393B5355453}.TestsWithFake|x64.ActiveCfg = TestsWithFake|x64
@@ -462,8 +460,6 @@ Global
 		{FFEB9FD5-739C-40E7-9CC1-87E456817F1A}.Release|x86.Build.0 = Release|x86
 		{FFEB9FD5-739C-40E7-9CC1-87E456817F1A}.Release|x86.Deploy.0 = Release|x86
 		{FFEB9FD5-739C-40E7-9CC1-87E456817F1A}.TestsWithFake|Any CPU.ActiveCfg = TestsWithFake|Any CPU
-		{FFEB9FD5-739C-40E7-9CC1-87E456817F1A}.TestsWithFake|Any CPU.Build.0 = TestsWithFake|Any CPU
-		{FFEB9FD5-739C-40E7-9CC1-87E456817F1A}.TestsWithFake|Any CPU.Deploy.0 = TestsWithFake|Any CPU
 		{FFEB9FD5-739C-40E7-9CC1-87E456817F1A}.TestsWithFake|ARM.ActiveCfg = TestsWithFake|ARM
 		{FFEB9FD5-739C-40E7-9CC1-87E456817F1A}.TestsWithFake|ARM.Build.0 = TestsWithFake|ARM
 		{FFEB9FD5-739C-40E7-9CC1-87E456817F1A}.TestsWithFake|ARM.Deploy.0 = TestsWithFake|ARM
@@ -546,7 +542,6 @@ Global
 		{C7D9A43D-CF1A-45B8-96A4-8723631FA685}.Release|x86.ActiveCfg = Release|x86
 		{C7D9A43D-CF1A-45B8-96A4-8723631FA685}.Release|x86.Build.0 = Release|x86
 		{C7D9A43D-CF1A-45B8-96A4-8723631FA685}.TestsWithFake|Any CPU.ActiveCfg = TestsWithFake|Any CPU
-		{C7D9A43D-CF1A-45B8-96A4-8723631FA685}.TestsWithFake|Any CPU.Build.0 = TestsWithFake|Any CPU
 		{C7D9A43D-CF1A-45B8-96A4-8723631FA685}.TestsWithFake|ARM.ActiveCfg = TestsWithFake|ARM
 		{C7D9A43D-CF1A-45B8-96A4-8723631FA685}.TestsWithFake|ARM.Build.0 = TestsWithFake|ARM
 		{C7D9A43D-CF1A-45B8-96A4-8723631FA685}.TestsWithFake|x64.ActiveCfg = TestsWithFake|x64

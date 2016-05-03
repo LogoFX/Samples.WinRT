@@ -340,7 +340,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestsWithFake|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\TestsWithFake\</OutputPath>
+    <OutputPath>..\bin\TestsWithFake\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <DebugType>full</DebugType>
