@@ -4,7 +4,7 @@ using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 
 namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
 {
-    public class TestBootstrapper : BootstrapperContainerBase<ExtendedSimpleContainerAdapter>
+    public class TestBootstrapper : TestBootstrapperContainerBase<ExtendedSimpleContainerAdapter>
         .WithRootObject<ShellViewModel>
     {
         public TestBootstrapper() :
