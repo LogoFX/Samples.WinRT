@@ -14,7 +14,7 @@ namespace Samples.WinRT.Client.Launcher
         private static readonly ExtendedSimpleContainerAdapter _iocContainer = new ExtendedSimpleContainerAdapter();       
 
         public AppBootstrapper() : base(_iocContainer)
-        {            
+        {                                   
         }
 
         protected override void PrepareViewFirst(Frame rootFrame)
