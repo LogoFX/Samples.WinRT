@@ -8,7 +8,7 @@ using Samples.Client.Data.Fake.ProviderBuilders;
 #if REAL
 #endif
 
-namespace Samples.WinRT.Client.Tests.Steps
+namespace Samples.Client.Tests.Steps
 {
     public static class GivenLoginSteps
     {

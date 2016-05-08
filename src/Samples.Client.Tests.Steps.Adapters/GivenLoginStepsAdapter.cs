@@ -1,6 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 
-namespace Samples.WinRT.Client.Tests.Steps.Adapters
+namespace Samples.Client.Tests.Steps.Adapters
 {
     [Binding]
     class GivenLoginStepsAdapter

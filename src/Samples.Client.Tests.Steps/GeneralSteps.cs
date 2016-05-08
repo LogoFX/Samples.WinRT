@@ -1,7 +1,7 @@
 ﻿using Attest.Testing.Core;
 using LogoFX.Client.Testing.Contracts;
 
-namespace Samples.WinRT.Client.Tests.Steps
+namespace Samples.Client.Tests.Steps
 {
     public static class GeneralSteps
     {

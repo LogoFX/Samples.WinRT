@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9E8AD53B-009B-433D-8FD7-4C0878174223}</ProjectGuid>
+    <ProjectGuid>{EBB14775-13E8-4589-841D-FEDC1D04CFB1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Samples.WinRT.Client.Tests.Specs</RootNamespace>
-    <AssemblyName>Samples.WinRT.Client.Tests.Specs</AssemblyName>
+    <RootNamespace>Samples.Client.Tests.Steps.Adapters</RootNamespace>
+    <AssemblyName>Samples.Client.Tests.Steps.Adapters</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -53,17 +53,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneralStepsAdapter.cs" />
+    <Compile Include="GivenLoginStepsAdapter.cs" />
+    <Compile Include="LoginStepsAdapter.cs" />
+    <Compile Include="MainStepsAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Login.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Steps.Adapters\Samples.WinRT.Client.Tests.Steps.Adapters.csproj">
-      <Project>{ebb14775-13e8-4589-841d-fedc1d04cfb1}</Project>
-      <Name>Samples.WinRT.Client.Tests.Steps.Adapters</Name>
+    <ProjectReference Include="..\Samples.Client.Tests.Steps\Samples.Client.Tests.Steps.csproj">
+      <Project>{718c92e0-cafe-43af-97ec-869bc8e9482f}</Project>
+      <Name>Samples.Client.Tests.Steps</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

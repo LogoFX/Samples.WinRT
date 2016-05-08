@@ -144,6 +144,10 @@
       <Project>{33766857-5fce-4c2c-b167-e76a9f521ff0}</Project>
       <Name>Samples.Client.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Samples.Client.Tests.Steps\Samples.Client.Tests.Steps.csproj">
+      <Project>{718C92E0-CAFE-43AF-97EC-869BC8E9482F}</Project>
+      <Name>Samples.Client.Tests.Steps</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Samples.WinRT.Client.Presentation.Shell\Samples.WinRT.Client.Presentation.Shell.csproj">
       <Project>{d73e6669-f40f-41cb-b4f9-cec09dee7619}</Project>
       <Name>Samples.WinRT.Client.Presentation.Shell</Name>
@@ -155,10 +159,6 @@
     <ProjectReference Include="..\Samples.WinRT.Client.Tests.Integration.Infra\Samples.WinRT.Client.Tests.Integration.Infra.csproj">
       <Project>{D592B9B3-DC21-486C-AEDD-3FA5CE886D7C}</Project>
       <Name>Samples.WinRT.Client.Tests.Integration.Infra</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Steps\Samples.WinRT.Client.Tests.Steps.csproj">
-      <Project>{718C92E0-CAFE-43AF-97EC-869BC8E9482F}</Project>
-      <Name>Samples.WinRT.Client.Tests.Steps</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

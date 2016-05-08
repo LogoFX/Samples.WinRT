@@ -1,4 +1,4 @@
-﻿namespace Samples.WinRT.Client.Tests.Contracts.ScreenObjects
+﻿namespace Samples.Client.Tests.Contracts.ScreenObjects
 {
     public interface ILoginScreenObject
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+using Samples.Client.Tests.Steps;
 using Samples.WinRT.Client.Tests.Integration.Infra;
-using Samples.WinRT.Client.Tests.Steps;
 
 namespace Samples.WinRT.Client.Tests
 {

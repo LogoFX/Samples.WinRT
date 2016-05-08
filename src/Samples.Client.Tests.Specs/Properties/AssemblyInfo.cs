@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Samples.WinRT.Client.Tests.Steps.Adapters")]
+[assembly: AssemblyTitle("Samples.Client.Tests.Specs")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Samples.WinRT.Client.Tests.Steps.Adapters")]
+[assembly: AssemblyProduct("Samples.Client.Tests.Specs")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ebb14775-13e8-4589-841d-fedc1d04cfb1")]
+[assembly: Guid("9e8ad53b-009b-433d-8fd7-4c0878174223")]
 
 // Version information for an assembly consists of the following four values:
 //

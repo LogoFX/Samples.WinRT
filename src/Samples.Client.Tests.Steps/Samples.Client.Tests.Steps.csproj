@@ -8,8 +8,8 @@
     <ProjectGuid>{718C92E0-CAFE-43AF-97EC-869BC8E9482F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Samples.WinRT.Client.Tests.Steps</RootNamespace>
-    <AssemblyName>Samples.WinRT.Client.Tests.Steps</AssemblyName>
+    <RootNamespace>Samples.Client.Tests.Steps</RootNamespace>
+    <AssemblyName>Samples.Client.Tests.Steps</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -62,9 +62,9 @@
       <Project>{B9B61E48-888E-4347-8DFE-F41DAC4A1F2F}</Project>
       <Name>Samples.Client.Data.Fake.ProviderBuilders</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Samples.WinRT.Client.Tests.Contracts.ScreenObjects\Samples.WinRT.Client.Tests.Contracts.ScreenObjects.csproj">
-      <Project>{319D9A32-4C4A-41CF-BA5D-B329E07420F8}</Project>
-      <Name>Samples.WinRT.Client.Tests.Contracts.ScreenObjects</Name>
+    <ProjectReference Include="..\Samples.Client.Tests.Contracts.ScreenObjects\Samples.Client.Tests.Contracts.ScreenObjects.csproj">
+      <Project>{319d9a32-4c4a-41cf-ba5d-b329e07420f8}</Project>
+      <Name>Samples.Client.Tests.Contracts.ScreenObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
