@@ -14,7 +14,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra.Shared
         protected override void RegisterFakes()
         {
             base.RegisterFakes();            
-            RegistrationHelper.RegisterBuilder(ScenarioHelper.Container, ScenarioHelper.GetOrCreate(WarehouseProviderBuilder.CreateBuilder));
+            RegistrationHelper.RegisterBuilder(ScenarioHelper.Registrator, ScenarioHelper.GetOrCreate(WarehouseProviderBuilder.CreateBuilder));
         }
 
         protected override void OnStart(object rootObject)

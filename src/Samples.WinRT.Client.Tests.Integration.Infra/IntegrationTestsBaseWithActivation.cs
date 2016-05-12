@@ -1,6 +1,5 @@
 using Attest.Testing.Core;
 using Caliburn.Micro;
-using LogoFX.Client.Bootstrapping.Adapters.SimpleContainer;
 using LogoFX.Client.Testing.Contracts;
 using Samples.WinRT.Client.Presentation.Shell.ViewModels;
 using Samples.WinRT.Client.Tests.Integration.Infra.Shared;
@@ -8,7 +7,7 @@ using Samples.WinRT.Client.Tests.Integration.Infra.Shared;
 namespace Samples.WinRT.Client.Tests.Integration.Infra
 {
     public abstract class IntegrationTestsBaseWithActivation :
-        IntegrationTestsBase<ExtendedSimpleContainerAdapter, ShellViewModel, TestBootstrapper>
+        IntegrationTestsBase<ShellViewModel, TestBootstrapper>
     {               
         protected override ShellViewModel CreateRootObjectOverride(ShellViewModel rootObject)
         {

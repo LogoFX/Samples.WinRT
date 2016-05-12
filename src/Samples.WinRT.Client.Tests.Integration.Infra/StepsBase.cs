@@ -18,7 +18,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         /// <param name="instance">The instance to be registered.</param>
         protected void RegisterInstance<TService>(TService instance) where TService : class
         {
-            RegistrationHelper.RegisterInstance(GetIocContainer(), instance);
+            RegistrationHelper.RegisterInstance(GetRegistrator(), instance);
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         public static void RegisterTransient<TService, TImplementation>()
             where TImplementation : class, TService
         {
-            RegistrationHelper.RegisterTransient<TService, TImplementation>(GetIocContainer());
+            RegistrationHelper.RegisterTransient<TService, TImplementation>(GetRegistrator());
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         /// <param name="builder">The builder to be registered.</param>
         protected void RegisterBuilder<TService>(FakeBuilderBase<TService> builder) where TService : class
         {
-            RegistrationHelper.RegisterBuilder(GetIocContainer(), builder);
+            RegistrationHelper.RegisterBuilder(GetRegistrator(), builder);
         }        
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         /// <param name="fake">The fake to be registered.</param>
         protected void RegisterFake<TService>(IFake<TService> fake) where TService : class
         {
-            RegistrationHelper.RegisterFake(GetIocContainer(), fake);
+            RegistrationHelper.RegisterFake(GetRegistrator(), fake);
         }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         /// <typeparam name="TService">The type of service.</typeparam>
         /// <param name="fake">The mock to be registered.</param>
         protected void RegisterMock<TService>(IMock<TService> fake) where TService : class
-        {
-            RegistrationHelper.RegisterMock(GetIocContainer(), fake);
+        {            
+            RegistrationHelper.RegisterMock(GetRegistrator(), fake);
         }
 
         /// <summary>
@@ -72,9 +72,9 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
             return ScenarioHelper.Get<TStepsProvider>();
         }
 
-        private static IIocContainer GetIocContainer()
+        private static IIocContainerRegistrator GetRegistrator()
         {
-            return ScenarioHelper.Container;
+            return ScenarioHelper.Registrator;
         }
     }
 }

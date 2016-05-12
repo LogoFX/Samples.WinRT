@@ -50,7 +50,7 @@ namespace Samples.WinRT.Client.Launcher
             Apply(IBootstrapperWithContainerAdapter<TIocContainerAdapter> @object)
         {
             INavigationService navigationService = _cacheViewModels ? new CachingFrameAdapter(_rootFrame, _treatViewAsLoaded) : new FrameAdapter(_rootFrame, _treatViewAsLoaded);
-            @object.ContainerAdapter.RegisterInstance(navigationService);
+            @object.Registrator.RegisterInstance(navigationService);
             return @object;
         }
     }

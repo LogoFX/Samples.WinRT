@@ -9,27 +9,24 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
     /// Base class for all integration-tests fixtures that involve ioc container adapter 
     /// and test bootstrapper and use MSTest as test framework provider.
     /// </summary>
-    /// <typeparam name="TContainerAdapter">The type of ioc container adapter.</typeparam>
     /// <typeparam name="TRootObject">The type of root object, from which the test's flow starts.</typeparam>
     /// <typeparam name="TBootstrapper">The type of bootstrapper.</typeparam>
-    public abstract class IntegrationTestsBase<TContainerAdapter, TRootObject, TBootstrapper> : 
-        IntegrationTestsBase<TContainerAdapter, TRootObject>,
-        IRootObjectFactory       
-        where TContainerAdapter : IIocContainer 
+    public abstract class IntegrationTestsBase<TRootObject, TBootstrapper> : 
+        IntegrationTestsBase<TRootObject>, IRootObjectFactory
         where TRootObject : class 
-        where TBootstrapper : IInitializable, IHaveContainerAdapter<TContainerAdapter>, new()
+        where TBootstrapper : IInitializable, IHaveContainerRegistrator, IHaveContainerResolver, new()
     {
-        private readonly IInitializationParametersManager<TContainerAdapter> _initializationParametersManager;
+        private readonly IInitializationParametersManager<IocContainerProxy> _initializationParametersManager;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IntegrationTestsBase{TContainer, TRootObject, TBootstrapper}"/> class.
+        /// Initializes a new instance of the <see cref="IntegrationTestsBase{TRootObject,TBootstrapper}"/> class.
         /// </summary>
         /// <param name="resolutionStyle">The resolution style.</param>
         protected IntegrationTestsBase(
             InitializationParametersResolutionStyle resolutionStyle = InitializationParametersResolutionStyle.PerRequest)
         {            
             _initializationParametersManager =
-                ContainerAdapterInitializationParametersManagerStore<TBootstrapper, TContainerAdapter>.GetInitializationParametersManager(
+                ContainerAdapterInitializationParametersManagerStore<TBootstrapper>.GetInitializationParametersManager(
                     resolutionStyle);
             ScenarioContext.Current = new Scenario();
         }
@@ -68,8 +65,9 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         protected void SetupCore()
         {
             var initializationParameters = _initializationParametersManager.GetInitializationParameters();
-            IocContainer = initializationParameters.IocContainer;            
-            ScenarioHelper.Initialize(IocContainer, this);
+            Registrator = initializationParameters.IocContainer;
+            Resolver = initializationParameters.IocContainer;
+            ScenarioHelper.Initialize(initializationParameters.IocContainer, this);
         }
 
         /// <summary>
@@ -82,9 +80,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
 
         protected void TearDownCore()
         {
-            ScenarioHelper.Clear();
-            IocContainer.Dispose();
-            //Dispose();
+            ScenarioHelper.Clear();           
         }
 
         /// <summary>
@@ -122,7 +118,8 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
     /// <typeparam name="TContainerAdapter">The type of ioc container adapter.</typeparam>
     /// <typeparam name="TRootObject">The type of root object, from which the test's flow starts.</typeparam>
     /// <typeparam name="TBootstrapper">The type of bootstrapper.</typeparam>
-    public abstract class IntegrationTestsBase<TContainer, TContainerAdapter, TRootObject, TBootstrapper> : Attest.Testing.Core.IntegrationTestsBase<TContainer, TContainerAdapter, TRootObject>,
+    public abstract class IntegrationTestsBase<TContainer, TContainerAdapter, TRootObject, TBootstrapper> : 
+        IntegrationTestsBase<TRootObject>,
         IRootObjectFactory        
         where TContainerAdapter : class, IIocContainer, IIocContainerAdapter<TContainer>
         where TRootObject : class 
@@ -131,7 +128,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         private readonly IInitializationParametersManager<TContainer> _initializationParametersManager;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IntegrationTestsBase{TContainer, TRootObject, TBootstrapper}"/> class.
+        /// Initializes a new instance of the <see cref="IntegrationTestsBase{TRootObject,TBootstrapper}"/> class.
         /// </summary>
         /// <param name="resolutionStyle">The resolution style.</param>
         protected IntegrationTestsBase(
@@ -177,8 +174,10 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
         private void SetupCore()
         {
             var initializationParameters = _initializationParametersManager.GetInitializationParameters();
-            IocContainer = CreateAdapter(initializationParameters.IocContainer);            
-            ScenarioHelper.Initialize(IocContainer, this);
+            var containerAdapter = CreateAdapter(initializationParameters.IocContainer);
+            Registrator = containerAdapter;
+            Resolver = containerAdapter;
+            ScenarioHelper.Initialize(containerAdapter, this);
         }
 
         /// <summary>
@@ -198,9 +197,7 @@ namespace Samples.WinRT.Client.Tests.Integration.Infra
 
         private void TearDownCore()
         {
-            ScenarioHelper.Clear();
-            IocContainer.Dispose();
-            //Dispose();
+            ScenarioHelper.Clear();            
         }
 
         /// <summary>
