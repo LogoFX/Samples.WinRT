@@ -4,36 +4,32 @@ using LogoFX.Bootstrapping;
 using LogoFX.Client.Bootstrapping;
 using LogoFX.Client.Bootstrapping.Adapters.SimpleContainer;
 using Samples.WinRT.Client.Presentation.Shell.ViewModels;
-using Solid.Practices.IoC;
 using Solid.Practices.Middleware;
 
 namespace Samples.WinRT.Client.Launcher
 {
     public class AppBootstrapper : BootstrapperContainerBase<ExtendedSimpleContainerAdapter>.WithRootObject<ShellViewModel>
     {
-        private static readonly ExtendedSimpleContainerAdapter _iocContainer = new ExtendedSimpleContainerAdapter();       
-
-        public AppBootstrapper() : base(_iocContainer)
+        public AppBootstrapper() : base(new ExtendedSimpleContainerAdapter())
         {                                   
         }
 
         protected override void PrepareViewFirst(Frame rootFrame)
         {
-            //Use(new RegisterNavigationServiceMiddleware<ExtendedSimpleContainerAdapter>(rootFrame));
+            //Use(new RegisterNavigationServiceMiddleware(rootFrame));
             RegisterNavigationService(rootFrame);            
         }
         
         private void RegisterNavigationService(Frame rootFrame, bool treatViewAsLoaded = false, bool cacheViewModels = false)
         {
             INavigationService navigationService = cacheViewModels ? new CachingFrameAdapter(rootFrame, treatViewAsLoaded) : new FrameAdapter(rootFrame, treatViewAsLoaded);
-            _iocContainer.RegisterInstance(navigationService);
+            Registrator.RegisterInstance(navigationService);            
         }
     }
 
     // ReSharper disable once UnusedMember.Local -- This middleware uses Frame object which is still not available during Configure phase...
-    class RegisterNavigationServiceMiddleware<TIocContainerAdapter> : 
-        IMiddleware<IBootstrapperWithContainerAdapter<TIocContainerAdapter>>
-        where TIocContainerAdapter : IIocContainer
+    class RegisterNavigationServiceMiddleware : 
+        IMiddleware<IBootstrapperWithContainerRegistrator>
     {
         private readonly Frame _rootFrame;
         private readonly bool _treatViewAsLoaded;
@@ -46,8 +42,8 @@ namespace Samples.WinRT.Client.Launcher
             _cacheViewModels = cacheViewModels;
         }
 
-        public IBootstrapperWithContainerAdapter<TIocContainerAdapter> 
-            Apply(IBootstrapperWithContainerAdapter<TIocContainerAdapter> @object)
+        public IBootstrapperWithContainerRegistrator 
+            Apply(IBootstrapperWithContainerRegistrator @object)
         {
             INavigationService navigationService = _cacheViewModels ? new CachingFrameAdapter(_rootFrame, _treatViewAsLoaded) : new FrameAdapter(_rootFrame, _treatViewAsLoaded);
             @object.Registrator.RegisterInstance(navigationService);
