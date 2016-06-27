@@ -157,7 +157,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="LogoFX.Client.Bootstrapping.Testing">
-      <HintPath>..\..\..\logofx-project\cl-bs\src\Bin\win81\Release\LogoFX.Client.Bootstrapping.Testing.dll</HintPath>
+      <HintPath>..\Lib\LogoFX.Client.Bootstrapping.Testing.dll</HintPath>
     </Reference>
     <Reference Include="LogoFX.Client.Core, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LogoFX.Client.Core.Core.1.0.7\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch\LogoFX.Client.Core.dll</HintPath>
