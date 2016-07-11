@@ -27,7 +27,8 @@ namespace Samples.Client.Data.Fake.Providers
         async Task ILoginProvider.Login(string username, string password)
         {
             var service = GetService(() => _loginProviderBuilder, b => b);
-            await service.Login(username, password);
+            var task = service.Login(username, password);
+            await task;
         }
     }    
 }

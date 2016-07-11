@@ -8,7 +8,7 @@ using LogoFX.Client.Data.Fake.ProviderBuilders;
 using Samples.Client.Data.Contracts.Providers;
 
 namespace Samples.Client.Data.Fake.ProviderBuilders
-{           
+{
     [Serializable]
     public class LoginProviderBuilder : FakeBuilderBase<ILoginProvider>
     {
