@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using Attest.Fake.Builders;
 using JetBrains.Annotations;
@@ -28,7 +27,7 @@ namespace Samples.Client.Data.Fake.Providers
 
         async Task<IEnumerable<WarehouseItemDto>> IWarehouseProvider.GetWarehouseItems()
         {
-            await TaskRunner.RunAsync(() => Thread.Sleep(_random.Next(2000)));
+            await TaskRunner.RunAsync(() => Task.Delay(_random.Next(2000)));
             var service = GetService(() => _warehouseProviderBuilder, b => b);
             var warehouseItems = await service.GetWarehouseItems();
             return warehouseItems;
